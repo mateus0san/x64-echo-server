@@ -66,6 +66,10 @@ write:
         jmp read
 
 stop_reading:
+        # shutdown(fd, 2)
+        mov rdi, rbx; mov rsi, 2; mov rax, 0x30;
+        syscall
+
         mov rsp, rbp
         pop rbp
         
